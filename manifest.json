@@ -1,0 +1,12 @@
+{
+    "name": "Trello Branch Namer",
+    "version": "1.0.0",
+    "description": "Command to make a good branch name",
+    "manifest_version": 3,
+    "author": "Nash Sibanda",
+    "action": {
+        "default_popup": "index.html",
+        "default_title": "Branch Name"
+    },
+    "permissions": ["storage", "tabs"]
+}
