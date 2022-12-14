@@ -6,7 +6,7 @@
     "author": "Nash Sibanda",
     "action": {
         "default_popup": "index.html",
-        "default_title": "Branch Name"
+        "default_title": "Branch Namer"
     },
     "permissions": ["storage", "tabs"]
 }
