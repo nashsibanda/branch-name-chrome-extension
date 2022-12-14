@@ -62,8 +62,10 @@ prefixEntry.addEventListener("input", () => {
 });
 
 const copyBtn = document.getElementById("copy-btn");
-copyBtn.addEventListener("click", () => {
-  copyToClipboard(branchNameDisplay.innerText);
+copyBtn.addEventListener('click', (e) => {
+  copyToClipboard(branchNameDisplay.innerText)
+  document.getElementById("branch-name-tooltip").innerText = "Copied!";
+  setTimeout(() => document.getElementById("branch-name-tooltip").innerText = "Copy branch name", 2000)
 });
 
 function copyToClipboard(text) {
@@ -71,12 +73,10 @@ function copyToClipboard(text) {
 }
 
 const copyCmdBtn = document.getElementById("copy-cmd-btn");
-copyCmdBtn.addEventListener("click", () => {
-  copyToClipboard();
+copyCmdBtn.addEventListener('click', (e) => {
+  copyToClipboard(branchCommandDisplay.innerText)
+  document.getElementById("branch-cmd-tooltip").innerText = "Copied!";
+  setTimeout(() => document.getElementById("branch-cmd-tooltip").innerText = "Copy git checkout command", 2000)
 });
 
-function copyToClipboard() {
-  navigator.clipboard.writeText(branchCommandDisplay.innerText);
-}
-
-init();
+init()
