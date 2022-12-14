@@ -1,0 +1,16 @@
+name: GitHub Commit To Trello Comment
+
+on: [pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: nashsibanda/github-pr-to-trello-card@main
+        with:
+          trello-api-key: ${{ secrets.TRELLO_KEY }}
+          trello-auth-token: ${{ secrets.TRELLO_TOKEN }}
+          trello-card-id-pattern: "/\/tr-([a-zA-Z0-9]+)\/.*/"
