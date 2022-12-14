@@ -5,7 +5,7 @@ on:
     types: [opened]
 
 jobs:
-  link-to-trello:
+  build:
     runs-on: ubuntu-latest
 
     steps:
