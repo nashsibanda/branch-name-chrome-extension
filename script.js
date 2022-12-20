@@ -13,6 +13,7 @@ async function init() {
 
 const branchNameDisplay = document.getElementById("branch-name");
 const branchCommandDisplay = document.getElementById("branch-command");
+const shortcodeDisplay = document.getElementById("shortcode");
 const container = document.getElementById("container");
 
 function addBranchName() {
@@ -29,6 +30,7 @@ function addBranchName() {
     );
     branchNameDisplay.innerText = withPrefix;
     branchCommandDisplay.innerText = "git checkout -b " + withPrefix;
+    shortcodeDisplay.innerText = `/tr-${url.match(/\/c\/([\d\w]*)\//)[1]}/`
   } else {
     container.classList.add("hide");
   }
@@ -77,6 +79,13 @@ copyCmdBtn.addEventListener('click', (e) => {
   copyToClipboard(branchCommandDisplay.innerText)
   document.getElementById("branch-cmd-tooltip").innerText = "Copied!";
   setTimeout(() => document.getElementById("branch-cmd-tooltip").innerText = "Copy git checkout command", 2000)
+});
+
+const copyShortcodeBtn = document.getElementById("copy-shortcode-btn");
+copyShortcodeBtn.addEventListener('click', (e) => {
+  copyToClipboard(shortcodeDisplay.innerText)
+  document.getElementById("shortcode-tooltip").innerText = "Copied!";
+  setTimeout(() => document.getElementById("shortcode-tooltip").innerText = "Copy card shortcode", 2000)
 });
 
 init()
