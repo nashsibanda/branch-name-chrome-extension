@@ -1,6 +1,8 @@
 name: GitHub Commit To Trello Comment
 
-on: [pull_request]
+on:
+  pull_request:
+    types: [opened]
 
 jobs:
   build:
@@ -13,3 +15,4 @@ jobs:
         with:
           trello-api-key: ${{ secrets.TRELLO_KEY }}
           trello-auth-token: ${{ secrets.TRELLO_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
