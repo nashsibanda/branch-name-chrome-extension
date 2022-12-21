@@ -46,8 +46,7 @@ function getData() {
 }
 
 function savePrefix() {
-  prefix = prefixEntry.value.replace(/[^\da-zA-Z]/g, "");
-
+  prefix = prefixEntry.value.replace(/[^-_\da-zA-Z]/g, "");
   chrome.storage.sync.set({
     prefix: prefix,
   });
