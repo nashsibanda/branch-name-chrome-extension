@@ -64,8 +64,9 @@ prefixEntry.addEventListener("input", () => {
 });
 
 const copyBtn = document.getElementById("copy-btn");
-copyBtn.addEventListener('click', (e) => {
-  copyToClipboard(branchNameDisplay.innerText)
+
+copyBtn.addEventListener("click", () => {
+  copyToClipboard(branchNameDisplay.innerText);
   document.getElementById("branch-name-tooltip").innerText = "Copied!";
   setTimeout(() => document.getElementById("branch-name-tooltip").innerText = "Copy branch name", 2000)
 });
@@ -75,7 +76,8 @@ function copyToClipboard(text) {
 }
 
 const copyCmdBtn = document.getElementById("copy-cmd-btn");
-copyCmdBtn.addEventListener('click', (e) => {
+
+copyCmdBtn.addEventListener("click", () => {
   copyToClipboard(branchCommandDisplay.innerText)
   document.getElementById("branch-cmd-tooltip").innerText = "Copied!";
   setTimeout(() => document.getElementById("branch-cmd-tooltip").innerText = "Copy git checkout command", 2000)
@@ -88,4 +90,4 @@ copyShortcodeBtn.addEventListener('click', (e) => {
   setTimeout(() => document.getElementById("shortcode-tooltip").innerText = "Copy card shortcode", 2000)
 });
 
-init()
+init();
